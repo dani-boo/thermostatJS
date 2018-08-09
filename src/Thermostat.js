@@ -6,6 +6,10 @@ Thermostat.prototype.getCurrentTemperature = function() {
   return this.temperature;
 };
 
+Thermostat.prototype.up = function() {
+  this.temperature += 1;
+};
+
 // function Player() {
 // }
 // Player.prototype.play = function(song) {
