@@ -10,6 +10,10 @@ Thermostat.prototype.up = function() {
   this.temperature += 1;
 };
 
+Thermostat.prototype.down = function() {
+  this.temperature -= 1;
+};
+
 // function Player() {
 // }
 // Player.prototype.play = function(song) {

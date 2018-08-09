@@ -13,10 +13,16 @@ describe('Thermostat', function() {
   });
 
   // User story 2: increase temperature with up button
-  it('increases temperature via up() button', function() {
+  it('increases temperature with up()', function() {
     thermostat.up();
     expect(thermostat.getCurrentTemperature()).toEqual(21);
   });
+
+  // User story 3: decrease temp with down button
+  it('lowers temperature with down()', function() {
+    thermostat.down();
+    expect(thermostat.getCurrentTemperature()).toEqual(19);
+  })
 
 });
 
