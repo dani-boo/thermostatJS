@@ -24,6 +24,14 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(19);
   })
 
+  // User story 4: minimum temperature
+  it('has a minimum of degrees', function() {
+    for (var i = 0; i < 11; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.getCurrentTemperature()).toEqual(10);
+  });
+
 });
 
 

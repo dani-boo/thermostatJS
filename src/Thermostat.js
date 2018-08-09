@@ -1,4 +1,5 @@
 function Thermostat() {
+  this.MIN_TEMP = 10;
   this.temperature = 20;
 };
 
@@ -11,7 +12,14 @@ Thermostat.prototype.up = function() {
 };
 
 Thermostat.prototype.down = function() {
+  if (this.isMinTemp()) {
+    return;
+  }
   this.temperature -= 1;
+};
+
+Thermostat.prototype.isMinTemp = function() {
+  return this.temperature === this.MIN_TEMP;
 };
 
 // function Player() {
