@@ -1,6 +1,7 @@
 function Thermostat() {
   this.MIN_TEMP = 10;
   this.temperature = 20;
+  this.powerSavingMode = true;
 };
 
 Thermostat.prototype.getCurrentTemperature = function() {
@@ -21,6 +22,18 @@ Thermostat.prototype.down = function() {
 Thermostat.prototype.isMinTemp = function() {
   return this.temperature === this.MIN_TEMP;
 };
+
+Thermostat.prototype.isPowerSavingOn = function() {
+  return this.powerSavingMode === true;
+};
+
+Thermostat.prototype.switchOffPowerSaving = function() {
+  this.powerSavingMode = false;
+};
+
+Thermostat.prototype.switchOnPowerSaving = function() {
+  this.powerSavingMode = true;
+}
 
 // function Player() {
 // }
