@@ -73,6 +73,37 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   })
 
+  describe('display energy usage', function() {
+    describe('when temp is below 18 degrees', function() {
+      
+      it('usage is low', function() {
+        // use for loop to get it lower than 18 - remember that it starts at 20
+        for(var i = 0; i < 3; i++) {
+          thermostat.down();
+        }
+        expect(thermostat.energyUsage()).toEqual('low');
+      });
+    });
+    
+    describe('when temp is between 18 and 25 degrees', function() {
+      
+      it('usage is medium', function() {
+        expect(thermostat.energyUsage()).toEqual('medium');
+      });
+    });
+    
+    describe('when temp is above 25 degrees', function() {
+      
+      it('usage is high', function() {
+        thermostat.switchOffPowerSaving();
+        // use for loop to get it higher than 25 - remember that it starts at 20
+        for(var i = 0; i < 6; i++) {
+           thermostat.up();
+         }
+         expect(thermostat.energyUsage()).toEqual('high');
+      });
+    });
+  });
 });
 
 

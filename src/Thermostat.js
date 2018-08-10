@@ -3,6 +3,7 @@ function Thermostat() {
   this.DEFAULT_TEMP = 20;
   this.temperature = this.DEFAULT_TEMP;
   this.powerSavingMode = true;
+  this.MED_TEMP_USAGE = 18;
   this.MAX_TEMP_PSM = 25;
   this.MAX_TEMP = 32;
 };
@@ -51,3 +52,13 @@ Thermostat.prototype.isMaxTemp = function() {
 Thermostat.prototype.reset = function() {
   this.temperature = this.DEFAULT_TEMP;
 }
+
+Thermostat.prototype.energyUsage = function() {
+  if (this.temperature < this.MED_TEMP_USAGE) {
+    return 'low';
+  }
+  if (this.temperature > this.MAX_TEMP_PSM) {
+    return 'high';
+  }
+  return 'medium';
+};
