@@ -48,7 +48,7 @@ describe('Thermostat', function() {
     expect(thermostat.isPowerSavingOn()).toBe(true);
   })
 
-  //User story 5: max temp on PSM
+  // User story 5: max temp on PSM
   it('has a max of 25 on PSM', function() {
     for (var i = 0; i < 6; i++) {
       thermostat.up();
@@ -56,6 +56,7 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(25);
   })
 
+  // User story 6
   it('has a max temp of 32 without PSM', function() {
     thermostat.switchOffPowerSaving();
     for (var i = 0; i < 13; i++) {
