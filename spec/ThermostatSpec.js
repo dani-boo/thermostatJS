@@ -33,19 +33,28 @@ describe('Thermostat', function() {
   });
 
   // Powersaving mode
-  it('starts out in powersaving mode', function() {
-    expect(thermostat.isPowerSavingOn()).toBe(true);
-  })
+  describe('powersaving mode', function() {
+    it('starts out in powersaving mode', function() {
+      expect(thermostat.isPowerSavingOn()).toBe(true);
+    })
 
-  it('can switch off powersaving mode', function() {
-    thermostat.switchOffPowerSaving();
-    expect(thermostat.isPowerSavingOn()).toBe(false);
-  });
+    it('can switch off powersaving mode', function() {
+      thermostat.switchOffPowerSaving();
+      expect(thermostat.isPowerSavingOn()).toBe(false);
+    });
 
-  it('can switch on powersaving mode', function() {
-    thermostat.switchOffPowerSaving();
-    thermostat.switchOnPowerSaving();
-    expect(thermostat.isPowerSavingOn()).toBe(true);
+    it('can switch on powersaving mode', function() {
+      thermostat.switchOffPowerSaving();
+      thermostat.switchOnPowerSaving();
+      expect(thermostat.isPowerSavingOn()).toBe(true);
+    })
+
+    it('resets to default temperature if PSM is switched on when above 25 degrees', function() {
+      thermostat.switchOffPowerSaving();
+      for(var i = 0; i < 13; i++) { thermostat.up(); }
+      thermostat.switchOnPowerSaving();
+      expect(thermostat.getCurrentTemperature()).toEqual(20);
+    })
   })
 
   // User story 5: max temp on PSM
