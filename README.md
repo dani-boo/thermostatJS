@@ -14,3 +14,5 @@
 8. You can reset the temperature to 20 with a reset function :white_check_mark:
 9. You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25 is medium-usage, anything else is high-usage. :white_check_mark:
 10. (In the challenges where we add an interface, low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.) :white_check_mark:
+
+![Tests in Jasmine](http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1534027878/Screen_Shot_2018-08-11_at_23.47.01_np9qav.png)
